@@ -1,0 +1,84 @@
+site_name: Александра Гафарова — визуальный художник # Название сайта
+site_description: Портфолио Саши Гафаровой # Описание сайта, добавляется в meta-теги
+theme: # Тема сайта, информация о ее параметрах
+  name: material # Название темы
+  logo:  images/logo.svg # Ссылка на логотип сайта
+  font:
+    text: Roboto # Шрифт текста
+    code: Roboto Mono # Шрифт для текста кода
+  features:
+    #- navigation.sections
+    - navigation.path # Хлебные крошки
+    - navigation.indexes # Позволяет создавать корневые страницы разделов меню. Корневая страница должна лежать в папке раздела и называться index.md. Пример использования корневых страниц приведен ниже в настройках nav
+    - navigation.tabs # Верхнее меню
+    - navigation.tabs.sticky # Фиксация верхнего меню
+    #- Navigation sections # Настройка спойлеров в левом меню
+    #- navigation.expand # Разворачивает спойлеры в левом меню по умолчанию
+    #- toc.integrate # Фиксирует оглавление страницы в левом меню
+    - navigation.instant # Функция быстрой загрузки страниц
+    - navigation.top # Добавляет кнопку «к началу» для быстрой обратной прокрутки страницы
+    - search.suggest # Подсказки при вводе поискового запроса
+    - search.highlight # Подсветка результатов поиска в тексте страницы
+    - content.code.copy # Кнопка копирования в блоке кода
+    - content.tooltips # Улучшенные подсказки
+
+  language: ru # Язык
+  palette: # Настройки светлой и тёмной тем
+    # Настройки светлой темы
+    #- scheme: default 
+    #  toggle:
+    #    icon: material/weather-sunny # Иконка для активации светлой темы
+    #    name: Выключить солнышко # Всплывающий текст-подсказка
+    #  primary: blue # Основной цвет
+    #  accent: purple # Акцентный цвет
+    # Настройки тёмной темы
+    - scheme: slate
+      primary: black
+      accent: blue
+
+nav: # Структура сайта
+    - Обо мне: index.md
+    - Взросление: maturation.md
+    - Город, который мне приснился: town-in-dreams.md
+    - Мимоза: mimosa.md
+    - Автопортреты: self-portraits.md
+    - Другие фото: other-photos.md
+
+extra_css:
+  - stylesheets/extra.css
+
+#extra:
+#  social: # Ссылки на соц.сети
+#    - icon: fontawesome/brands/github-alt # Иконка гитхаба
+#      link: https://github.com/{your_account} # Ссылка на гитхаб
+
+markdown_extensions: # Расширения markdown
+  - admonition # Поддержка информационных панелей (сообщений типа «Внимание», «Совет», «Примечание», etc.)
+  - footnotes # Поддержка встроенных сносок на страницах
+  - attr_list # Использование html-атрибутов и CSS в элементах markdown
+  - abbr # Поддержка тултипов
+  - md_in_html # Поддержка markdown внутри html
+  - def_list # Поддержка списков определений
+  - pymdownx.tabbed: # Использование вкладок (табов)
+      alternate_style: true
+  - pymdownx.details # Использование спойлеров (катов)
+  - pymdownx.highlight: # Подсветка синтаксиса в блоках кода
+      anchor_linenums: true
+  - pymdownx.superfences # Поддержка вложенных блоков кода
+  - pymdownx.snippets: # Использование заимствованного контента
+      base_path:
+        - snippets
+      check_paths: false
+  - pymdownx.caret # Использование выделения, подчеркивания и зачеркивания
+  - pymdownx.mark
+  - pymdownx.tilde
+#  - pymdownx.keys # Добавление в текст значков клавиш клавиатуры
+  - pymdownx.emoji: # Иконки и эмодзи
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+plugins:
+  - glightbox
+
+copyright: |
+  &copy; 2025 Novillero
